@@ -1865,7 +1865,21 @@ class MainWindow(QMainWindow, WindowMixin):
         self.panel.setAlignment(Qt.AlignLeft)
         self.comboBox = QComboBox()
         self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItems(['Chinese & English', 'English', 'French', 'German', 'Korean', 'Japanese'])
+        self.comboBox.addItems([
+            'Chinese_simplified', 
+            'Chinese_traditional', 
+            'English', 
+            'French', 
+            'German', 
+            'Korean', 
+            'Japanese', 
+            'Kannada', 
+            'Telugu', 
+            'Tamil', 
+            'Latin', 
+            'Cyrillic', 
+            'Devanagari'
+        ])
         vbox.addWidget(self.panel)
         vbox.addWidget(self.comboBox)
         self.dialog = QDialog()
@@ -1892,8 +1906,21 @@ class MainWindow(QMainWindow, WindowMixin):
 
     def modelChoose(self):
         print(self.comboBox.currentText())
-        lg_idx = {'Chinese & English': 'ch', 'English': 'en', 'French': 'french', 'German': 'german',
-                  'Korean': 'korean', 'Japanese': 'japan'}
+        lg_idx = {
+            'Chinese_simplified': 'ch',
+            'Chinese_traditional': 'cht', 
+            'English': 'en', 
+            'French': 'fr', 
+            'German': 'ger',
+            'Korean': 'kr', 
+            'Japanese': 'jp', 
+            'Kannada': 'ka',
+            'Telugu': 'te',
+            'Tamil': 'ta',
+            'Latin': 'la',
+            'Cyrillic': 'cy',
+            'D5evanagari': 'de',
+        }
         del self.ocr
         self.ocr = OCRSystem(config=lg_idx[self.comboBox.currentText()])
         self.dialog.close()
