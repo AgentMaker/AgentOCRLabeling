@@ -22,11 +22,17 @@ import platform
 import subprocess
 import sys
 from functools import partial
+from collections import defaultdict
 import json
 import cv2
 
 
+
 __dir__ = os.path.dirname(os.path.abspath(__file__))
+
+import numpy as np
+
+
 sys.path.append(__dir__)
 sys.path.append(os.path.abspath(os.path.join(__dir__, '../..')))
 sys.path.append("..")
@@ -1374,7 +1380,6 @@ class MainWindow(QMainWindow, WindowMixin):
         return False
 
 
-
     def showBoundingBoxFromPPlabel(self, filePath):
         imgidx = self.getImglabelidx(filePath)
         if imgidx not in self.PPlabel.keys():
@@ -1609,7 +1614,6 @@ class MainWindow(QMainWindow, WindowMixin):
         if filename:
             print('file name in openNext is ',filename)
             self.loadFile(filename)
-
 
     def updateFileListIcon(self, filename):
         pass
@@ -2174,6 +2178,7 @@ def main():
 
 
 if __name__ == '__main__':
+
     resource_file = './libs/resources.py'
     if not os.path.exists(resource_file):
         output = os.system('pyrcc5 -o libs/resources.py resources.qrc')
