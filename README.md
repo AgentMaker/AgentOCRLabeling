@@ -8,3 +8,7 @@
 * 提供多平台的程序包，可无需配置依赖环境直接使用（目前仅提供 Win10 x64 版本，更多平台支持敬请期待）
 
 * 在 Windows10 X64 （1903 版本及以后）平台上，支持自动 GPU 加速，兼容几乎所有支持 DirectX 12 的显卡（AMD/NVIDIA/Intel 显卡均可）
+
+## Contact us
+Email : [agentmaker@163.com]()<br>
+QQ Group : 1005109853
